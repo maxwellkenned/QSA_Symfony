@@ -20,7 +20,7 @@
          * @Route("/pessoas/listar" ,name="listarPessoa")
          * @Method({"GET"})
          */
-        public function listarEmpresas()
+        public function listarPessoas()
         {
             $pessoas = $this->getDoctrine()->getRepository(Pessoas::class)->findAll();
             return $this->render('Pessoas/indexPessoas.html.twig',array('pessoas'=>$pessoas));
