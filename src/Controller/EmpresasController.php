@@ -17,7 +17,6 @@
 
     class EmpresasController extends Controller 
     {
-
         /**
          * @Route("/empresas/listar" ,name="listarEmpresas")
          * @Method({"GET"})
@@ -25,6 +24,7 @@
         public function listarEmpresas()
         {
             $empresas = $this->getDoctrine()->getRepository(Empresas::class)->findAll();
+            
             return $this->render('Empresas/IndexEmpresas.html.twig',array('empresas'=>$empresas));
         }
 
@@ -47,8 +47,10 @@
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($empresa);
                 $entityManager->flush();
+                
                 return $this->redirectToRoute('listarEmpresas');
             }
+            
             return $this->render('Empresas/abrirEmpresa.html.twig', array('form' => $form->createView()));
         }
 
@@ -64,6 +66,7 @@
             $entityManager->flush();
             $response = new Response();
             $response->send();
+            
             return $this->redirectToRoute('listarEmpresas');
         }
 
@@ -86,6 +89,7 @@
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->flush();
+                
                 return $this->redirectToRoute('listarEmpresas');
             }
 
@@ -97,9 +101,10 @@
         */
         public function VerEmpresa($nuSeqEmpresa) 
         {
-        $empresa = $this->getDoctrine()->getRepository(Empresas::class)->find($nuSeqEmpresa);
-        $pessoas= $this->getDoctrine()->getRepository(Pessoas::class)->findBy(['nuSeqEmpresa' => (int)$empresa->getNuSeqEmpresa()]);
-        return $this->render('Empresas/verEmpresas.html.twig', array('empresa' => $empresa,'pessoas'=>$pessoas));
+            $empresa = $this->getDoctrine()->getRepository(Empresas::class)->find($nuSeqEmpresa);
+            $pessoas= $this->getDoctrine()->getRepository(Pessoas::class)->findBy(['nuSeqEmpresa' => (int)$empresa->getNuSeqEmpresa()]);
+        
+            return $this->render('Empresas/verEmpresas.html.twig', array('empresa' => $empresa,'pessoas'=>$pessoas));
         }
     }
 
