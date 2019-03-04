@@ -34,21 +34,25 @@ class Pessoas
     // Getters
     public function getNuSeqPessoa(): ?int
     {
+        
         return $this->nuSeqPessoa;
     }
 
     public function getDsNome(): ?string
     {
+        
         return $this->dsNome;
     }
 
     public function getNuSeqEmpresa(): ?int
     {
+        
         return $this->nuSeqEmpresa;
     }
 
     public function getCoCpfCnpj(): ?string
     {
+        
         return $this->coCpfCnpj;
     }
 
