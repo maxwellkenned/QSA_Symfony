@@ -4,8 +4,8 @@
 
 ### Especificações principais
 
-* [Symfony](https://symfony.com/4) - v4.1.0 - Framework PHP MVC
-* [PHP](https://secure.php.net/) - v7.1.0 - Linguagem
+* [Symfony](https://symfony.com/4) - v4.2.3 - Framework PHP MVC
+* [PHP](https://secure.php.net/) - v7.2.8 - Linguagem
 
 
 ### Instalação
