@@ -15,7 +15,7 @@
     use Symfony\Component\Form\Extension\Core\Type\SubmitType;
     use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 
-    class EmpresasController extends Controller 
+    class EmpresasController extends Controller
     {
         /**
          * @Route("/empresas/listar" ,name="listarEmpresas")
@@ -25,7 +25,7 @@
         {
             $empresas = $this->getDoctrine()->getRepository(Empresas::class)->findAll();
             
-            return $this->render('Empresas/IndexEmpresas.html.twig',array('empresas'=>$empresas));
+            return $this->render('Empresas/IndexEmpresas.html.twig', array('empresas'=>$empresas));
         }
 
         /**
@@ -36,9 +36,36 @@
         {
             $empresa = new Empresas();
             $form = $this->createFormBuilder($empresa)
-            ->add('coCnpj', TextType::class, array('attr' => array('class' => 'form-control','required'=> true,'max' => 14,'onblur'=>'javascript: formatarCampo(this);','onfocus'=>'javascript: retirarFormatacao(this);')))
-            ->add('razaoSocial', TextType::class, array('attr' => array('class' => 'form-control','required'=> true,'maxlength' => 100)))
-            ->add('salvar', SubmitType::class, array('label' => 'Salvar', 'attr' => array('class' => 'btn btn-primary mt-3')))
+            ->add(
+                'coCnpj',
+                TextType::class,
+                ['attr' =>
+                    [
+                        'class' => 'form-control',
+                        'required'=> true,
+                        'max' => 14,
+                        'onblur'=>'javascript: formatarCampo(this);',
+                        'onfocus'=>'javascript: retirarFormatacao(this);'
+                    ]
+
+                ])
+            ->add(
+                'razaoSocial',
+                TextType::class,
+                ['attr' =>
+                    [
+                        'class' => 'form-control',
+                        'required'=> true,
+                        'maxlength' => 100
+                    ]
+                ])
+            ->add(
+                'salvar',
+                SubmitType::class,
+                [
+                    'label' => 'Salvar',
+                    'attr' => ['class' => 'btn btn-primary mt-3']
+                ])
             ->getForm();
 
             $form->handleRequest($request);
@@ -58,7 +85,7 @@
          * @Route("/empresas/baixar/{nuSeqEmpresa}", name="baixarEmpresa")
          * @Method({"DELETE"})
          */
-        public function baixarEmpresa(Request $request, $nuSeqEmpresa) 
+        public function baixarEmpresa(Request $request, $nuSeqEmpresa)
         {
             $empresa = $this->getDoctrine()->getRepository(Empresas::class)->find($nuSeqEmpresa);
             $entityManager = $this->getDoctrine()->getManager();
@@ -74,14 +101,42 @@
         * @Route("/empresas/editar/{nuSeqEmpresa}", name="editarEmpresa")
         * Method({"GET", "POST"})
         */
-        public function editarEmpresas(Request $request, $nuSeqEmpresa) 
+        public function editarEmpresas(Request $request, $nuSeqEmpresa)
         {
             $empresa = new Empresas();
             $empresa = $this->getDoctrine()->getRepository(Empresas::class)->find($nuSeqEmpresa);
             $form = $this->createFormBuilder($empresa)
-            ->add('coCnpj', TextType::class, array('attr' => array('class' => 'form-control','required'=> true,'max' => 14,'onblur'=>'javascript: formatarCampo(this);','onfocus'=>'javascript: retirarFormatacao(this);')))
-            ->add('razaoSocial', TextType::class, array('attr' => array('class' => 'form-control','required'=> true,'maxlength' => 100)))
-            ->add('atualizar', SubmitType::class, array('label' => 'Atualizar','attr' => array('class' => 'btn btn-primary mt-3')))
+            ->add(
+                'coCnpj',
+                TextType::class,
+                [
+                    'attr' =>
+                    [
+                        'class' => 'form-control',
+                        'required'=> true,
+                        'max' => 14,
+                        'onblur'=>'javascript: formatarCampo(this);',
+                        'onfocus'=>'javascript: retirarFormatacao(this);'
+                    ]
+                ])
+            ->add(
+                'razaoSocial',
+                TextType::class,
+                [
+                    'attr' =>
+                    [
+                        'class' => 'form-control',
+                        'required'=> true,
+                        'maxlength' => 100
+                    ]
+                ])
+            ->add(
+                'atualizar',
+                SubmitType::class,
+                [
+                    'label' => 'Atualizar',
+                    'attr' => ['class' => 'btn btn-primary mt-3']
+                ])
             ->getForm();
 
             $form->handleRequest($request);
@@ -99,14 +154,12 @@
         /**
         * @Route("/empresas/{nuSeqEmpresa}", name="verEmpresa")
         */
-        public function VerEmpresa($nuSeqEmpresa) 
+        public function VerEmpresa($nuSeqEmpresa)
         {
             $empresa = $this->getDoctrine()->getRepository(Empresas::class)->find($nuSeqEmpresa);
             $pessoas= $this->getDoctrine()->getRepository(Pessoas::class)->findBy(['nuSeqEmpresa' => (int)$empresa->getNuSeqEmpresa()]);
         
             return $this->render('Empresas/verEmpresas.html.twig', array('empresa' => $empresa,'pessoas'=>$pessoas));
         }
+
     }
-
-
-
