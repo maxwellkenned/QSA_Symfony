@@ -10,13 +10,13 @@
 
     class AppController extends Controller 
     {
-
         /**
          * @Route("/" ,name="indexGeral")
          * @Method({"GET"})
          */
         public function listarEmpresas()
         {
+            
             return $this->render('inc/Index.html.twig');
         }
 
