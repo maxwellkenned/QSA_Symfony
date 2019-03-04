@@ -1,0 +1,6 @@
+#index:
+    #path: /
+    #controller: App\Controller\EmpresasController::index
+criar:
+    path: /empresas/criar
+    controller: App\Controller\EmpresasController::criar

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %} Listar Empresas {% endblock %}
+
+{% block body %}
+<a href="/pessoas/criar" class="btn btn-primary">Cadastrar Pessoa</a><p></p>
+    {% if pessoas %}
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cpf/Cnpj</th>
+                    <th>Ações</th>
+                </tr> 
+            </thead>
+            <tbody>
+                {%for pessoa in pessoas %}
+                    <tr>    
+                        <td>{{pessoa.dsNome}}</td>
+                        <td>{{pessoa.coCpfCnpj}}</td>
+                        <td>
+                        <a href="/pessoas/{{ pessoa.nuSeqPessoa }}" class="btn btn-success">Ver</a>
+                        <a href="/pessoas/editar/{{ pessoa.nuSeqPessoa }}" class="btn btn-warning">Editar</a>
+                        <a href="/pessoas/deletar/{{ pessoa.nuSeqPessoa }}" class="btn btn-danger delete-article" data-id="{{ pessoa.nuSeqPessoa }}">deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p> Não existe pessoas cadastradas </p>
+    {% endif %}
+{% endblock %}
