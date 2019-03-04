@@ -31,24 +31,31 @@ class Empresas
 
     public function getNuSeqEmpresa(): ?int
     {
+        
         return $this->nuSeqEmpresa;
     }
 
-    public function getCoCnpj(){
+    public function getCoCnpj()
+    {
+        
         return $this->coCnpj;
     }
 
-    public function getRazaoSocial(){
+    public function getRazaoSocial()
+    {
+        
         return $this->razaoSocial;
     }
 
     //  Setters
 
-    public function setCoCnpj($cnpj){
+    public function setCoCnpj($cnpj)
+    {
         $this->coCnpj=$cnpj;
     }
 
-    public function setRazaoSocial($razaoSocial){
+    public function setRazaoSocial($razaoSocial)
+    {
         $this->razaoSocial=$razaoSocial;
     }
     
