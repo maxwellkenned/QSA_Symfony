@@ -49,7 +49,7 @@ Estas são as rodas para uso deste webservice:
 #### QSA:
 | Função | Rota | Parametro | Tipo |
 | ------ | ------ | ------ | ------ |
-| Sócio - Listar Todas | /pessoas/listar | x | GET
+| Sócio - Listar Todos | /pessoas/listar | x | GET
 | Sócio - Cadastrar | /pessoas/criar | x | POST/GET
 | Sócio - Editar | /pessoas/editar/{nuSeqPessoa} | ID do Sócio | POST/GET
 | Sócio - Remover | /pessoas/deletar/{nuSeqPessoa} | ID do Sócio | DELETE
