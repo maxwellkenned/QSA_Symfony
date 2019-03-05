@@ -35,6 +35,10 @@ E para rodar o projeto:
 $ php bin/console server:run
 ```
 
+## OBS:
+- Fazer GIT CLONE -
+Todos os links baseados nos templates estão vinculados ao padrao "http://localhost/qsa_symfony/public/[ROTAS]" caso precise mudar, favor editar nos templates os links.
+
 ### Rotas
 Estas são as rodas para uso deste webservice:
 #### Empresas:
