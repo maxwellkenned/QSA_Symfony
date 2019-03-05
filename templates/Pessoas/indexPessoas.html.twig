@@ -2,7 +2,7 @@
 {% block title %} Listar Empresas {% endblock %}
 
 {% block body %}
-<a href="/pessoas/criar" class="btn btn-primary">Cadastrar Pessoa</a><p></p>
+<a href="http://localhost/qsa_symfony/public/pessoas/criar" class="btn btn-primary">Cadastrar Pessoa</a><p></p>
     {% if pessoas %}
         
         <table class="table table-striped">
@@ -19,9 +19,9 @@
                         <td>{{pessoa.dsNome}}</td>
                         <td>{{pessoa.coCpfCnpj}}</td>
                         <td>
-                        <a href="/pessoas/{{ pessoa.nuSeqPessoa }}" class="btn btn-success">Ver</a>
-                        <a href="/pessoas/editar/{{ pessoa.nuSeqPessoa }}" class="btn btn-warning">Editar</a>
-                        <a href="/pessoas/deletar/{{ pessoa.nuSeqPessoa }}" class="btn btn-danger delete-article" data-id="{{ pessoa.nuSeqPessoa }}">deletar</a>
+                        <a href="http://localhost/qsa_symfony/public/pessoas/{{ pessoa.nuSeqPessoa }}" class="btn btn-success">Ver</a>
+                        <a href="http://localhost/qsa_symfony/public/pessoas/editar/{{ pessoa.nuSeqPessoa }}" class="btn btn-warning">Editar</a>
+                        <a href="http://localhost/qsa_symfony/public/pessoas/deletar/{{ pessoa.nuSeqPessoa }}" class="btn btn-danger delete-article" data-id="{{ pessoa.nuSeqPessoa }}">deletar</a>
                         </td>
                     </tr>
                 {% endfor %}

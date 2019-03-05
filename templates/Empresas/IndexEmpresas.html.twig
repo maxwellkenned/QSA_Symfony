@@ -2,7 +2,7 @@
 {% block title %} Listar Empresas {% endblock %}
 
 {% block body %}
-<a href="/empresas/criar" class="btn btn-primary">Abrir Empresa</a><p></p>
+<a href="http://localhost/qsa_symfony/public/empresas/criar" class="btn btn-primary">Abrir Empresa</a><p></p>
     {% if empresas %}
         
         <table class="table table-striped">
@@ -19,9 +19,9 @@
                         <td>{{empresa.razaoSocial}}</td>
                         <td>{{empresa.coCnpj}}</td>
                         <td>
-                        <a href="/empresas/{{ empresa.nuSeqEmpresa }}" class="btn btn-success">Ver</a>
-                        <a href="/empresas/editar/{{ empresa.nuSeqEmpresa }}" class="btn btn-warning">Editar</a>
-                        <a href="/empresas/baixar/{{ empresa.nuSeqEmpresa }}" class="btn btn-danger" data-id="{{ empresa.nuSeqEmpresa }}">Baixar</a>
+                        <a href="http://localhost/qsa_symfony/public/empresas/{{ empresa.nuSeqEmpresa }}" class="btn btn-success">Ver</a>
+                        <a href="http://localhost/qsa_symfony/public/empresas/editar/{{ empresa.nuSeqEmpresa }}" class="btn btn-warning">Editar</a>
+                        <a href="http://localhost/qsa_symfony/public/empresas/baixar/{{ empresa.nuSeqEmpresa }}" class="btn btn-danger" data-id="{{ empresa.nuSeqEmpresa }}">Baixar</a>
                         </td>
                     </tr>
                 {% endfor %}

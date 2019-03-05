@@ -45,9 +45,9 @@
           <tr>
             <td>{{ empresa.coCnpj }} - {{empresa.razaoSocial}}</td>
             <td>
-              <a href="/empresas/{{ empresa.nuSeqEmpresa }}" class="btn btn-success">Ver</a>
-              <a href="/empresas/editar/{{ empresa.nuSeqEmpresa }}" class="btn btn-warning">Editar</a>
-              <a href="/empresas/baixar/{{ empresa.nuSeqEmpresa }}" class="btn btn-danger" data-id="{{ empresa.nuSeqEmpresa  }}">Baixar</a>
+              <a href="http://localhost/qsa_symfony/public/empresas/{{ empresa.nuSeqEmpresa }}" class="btn btn-success">Ver</a>
+              <a href="http://localhost/qsa_symfony/public/empresas/editar/{{ empresa.nuSeqEmpresa }}" class="btn btn-warning">Editar</a>
+              <a href="http://localhost/qsa_symfony/public/empresas/baixar/{{ empresa.nuSeqEmpresa }}" class="btn btn-danger" data-id="{{ empresa.nuSeqEmpresa  }}">Baixar</a>
             </td>
 
           </tr>
@@ -58,5 +58,5 @@
     <p> Não existe empresa relacionada.</p>
 {% endif %}
 
-<a href="/pessoas/listar" class="btn btn-primary">Voltar</a>
+<a href="http://localhost/qsa_symfony/public/pessoas/listar" class="btn btn-primary">Voltar</a>
 {% endblock %}

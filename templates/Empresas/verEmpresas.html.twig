@@ -38,9 +38,9 @@
           <tr>
             <td>{{ pessoa.coCpfCnpj }} - {{pessoa.dsNome}}</td>
             <td>
-              <a href="/pessoas/{{ pessoa.nuSeqPessoa }}" class="btn btn-success">Ver</a>
-              <a href="/pessoas/editar/{{ pessoa.nuSeqPessoa }}" class="btn btn-warning">Editar</a>
-              <a href="/pessoas/baixar/{{ pessoa.nuSeqPessoa }}" class="btn btn-danger" data-id="{{ pessoa.nuSeqPessoa }}">Deletar</a>
+              <a href="http://localhost/qsa_symfony/public/pessoas/{{ pessoa.nuSeqPessoa }}" class="btn btn-success">Ver</a>
+              <a href="http://localhost/qsa_symfony/public/pessoas/editar/{{ pessoa.nuSeqPessoa }}" class="btn btn-warning">Editar</a>
+              <a href="http://localhost/qsa_symfony/public/pessoas/baixar/{{ pessoa.nuSeqPessoa }}" class="btn btn-danger" data-id="{{ pessoa.nuSeqPessoa }}">Deletar</a>
             </td>
 
           </tr>
@@ -52,5 +52,5 @@
 
 {% endif %}
 
-<a href="/" class="btn btn-primary">Voltar</a>
+<a href="http://localhost/qsa_symfony/public/empresas/listar" class="btn btn-primary">Voltar</a>
 {% endblock %}
